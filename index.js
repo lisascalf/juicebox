@@ -10,6 +10,10 @@ server.use(morgan("dev"));
 
 server.use(express.json());
 
+server.listen(process.env.PORT || PORT, () => {
+  console.log("The server is up on port", PORT);
+});
+
 const apiRouter = require("./api");
 server.use("/api", apiRouter);
 
@@ -19,8 +23,4 @@ server.get("/background/:color", (req, res, next) => {
       <h1>Hello World</h1>
     </body>
   `);
-});
-
-server.listen(process.env.PORT || PORT, () => {
-  console.log("The server is up on port", PORT);
 });
