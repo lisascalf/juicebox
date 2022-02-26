@@ -1,7 +1,7 @@
 const { client } = require("./db");
 client.connect();
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 const express = require("express");
 const server = express();
 
@@ -21,6 +21,6 @@ server.get("/background/:color", (req, res, next) => {
   `);
 });
 
-server.listen(PORT, () => {
+server.listen(process.env.PORT || PORT, () => {
   console.log("The server is up on port", PORT);
 });
