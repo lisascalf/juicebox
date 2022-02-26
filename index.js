@@ -1,7 +1,7 @@
 const { client } = require("./db");
 client.connect();
 
-const { PORT = 3000 } = process.env;
+const PORT = 3000 || process.env.PORT;
 const express = require("express");
 const server = express();
 
