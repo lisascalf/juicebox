@@ -5,7 +5,7 @@ require("dotenv").config();
 const client = new Client({
   password: process.env.DB_PASSCODE,
   user: "postgres",
-  database: "juicebox",
+  database: process.env.DATABUSE_URL,
 });
 
 /**
